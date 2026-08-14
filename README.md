@@ -157,7 +157,7 @@
 | # | Paper | Venue | Role |
 |---|-------|-------|------|
 | 1 | **ARG-Attack**: Asymmetric Relational-Geometry Driven Universal Adversarial Perturbations for Vision-Language Models | ACL 2026 | 一作 |
-| 2 | **RADICL**: Real-world Adaptive Detection via Incremental Continual Learning — AIGC 图像检测小样本持续学习框架 | AAAI（在投） | 3/4 |
+| 2 | **ARISE**: Few-Shot Adaptation of AI-Generated Image Detectors to Emerging Generators  | AAAI（在投） | 3/4 |
 | 3 | *Learning to Research: Learning to Ranking the Similar Papers via BERT Fine-Tuning* | EI 会议 | 一作 |
 | 4 | 《基于深度学习的两阶段目标检测算法综述》 | 国家一级科技期刊 | 一作 |
 
@@ -170,7 +170,7 @@
 | 时间 | 学校 | 专业 / 方向 | 备注 |
 |------|------|------------|------|
 | 2024 — 至今 | **中国科学技术大学** | 电子信息（信息处理中心实验室）| 硕士（推免）｜校一等奖学金 |
-| 2019 — 2024 | **大连交通大学** | 软件工程 + 日语（双学位）| 工学学士 + 文学学士｜排名 **3/124（2.4%）**｜国家励志奖学金 |
+| 2019 — 2024 | **大连交通大学** | 软件工程 + 日语（双学位）| 工学学士 + 文学学士｜排名 3/124（2.4%）｜国家励志奖学金 |
 
 ---
 
