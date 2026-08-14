@@ -13,7 +13,7 @@
 
 ## 🧭 About Me
 
-- 🔭 **当前方向**：LLM Agent 自进化框架、多智能体强化学习（MARL）、视觉语言模型安全、LLM 评估与检索推荐系统评估
+- 🔭 **当前方向**：视觉语言模型安全、LLM 评估与检索推荐系统评估、多智能体强化学习（MARL）、LLM Agent 自进化框架
 - 🌱 **研究兴趣**：大模型预训练 / SFT / DPO / PPO、参数高效微调（LoRA/QLoRA）、多模态对抗攻击、持续学习 / 小样本学习、RAG / 检索排序
 - 💼 **实习经历**：拼多多（AI搜索评估框架研发）｜ 北方自动控制技术研究所（207所，MARL 泛化框架研发）
 - 🏆 **荣誉**：国家级奖项 6 项 / 省级 15 项 / 校级 30+ 项；国家励志奖学金、一等奖学金
@@ -156,8 +156,8 @@
 
 | # | Paper | Venue | Role |
 |---|-------|-------|------|
-| 1 | **ARG-Attack**: Asymmetric Relational-Geometry Attack — 跨模型可迁移的通用多模态对抗攻击框架 | ACL 2026 | 一作 |
-| 2 | **RADICL**: Real-world Adaptive Detection via Incremental Continual Learning — AIGC 图像检测小样本持续学习框架 | ECCV（在投） | 3/6 |
+| 1 | **ARG-Attack**: Asymmetric Relational-Geometry Driven Universal Adversarial Perturbations for Vision-Language Models | ACL 2026 | 一作 |
+| 2 | **RADICL**: Real-world Adaptive Detection via Incremental Continual Learning — AIGC 图像检测小样本持续学习框架 | AAAI（在投） | 3/4 |
 | 3 | *Learning to Research: Learning to Ranking the Similar Papers via BERT Fine-Tuning* | EI 会议 | 一作 |
 | 4 | 《基于深度学习的两阶段目标检测算法综述》 | 国家一级科技期刊 | 一作 |
 
