@@ -5,7 +5,7 @@
 
 <br/>
 
-📝 求职意向：大模型算法工程师 &nbsp;｜&nbsp; 🎓 中科大电子信息硕士在读 &nbsp;｜&nbsp; 📧 yejiaxin1020@163.com
+📝 求职意向：大模型算法工程师 &nbsp;｜&nbsp; 🎓 中科大电子信息硕士 &nbsp;｜&nbsp; 📧 yejiaxin1020@163.com
 
 </div>
 
@@ -15,7 +15,7 @@
 
 - 🔭 **当前方向**：LLM Agent 自进化框架、多智能体强化学习（MARL）、视觉语言模型安全
 - 🌱 **研究兴趣**：大模型预训练 / SFT / DPO / PPO、参数高效微调（LoRA/QLoRA）、多模态对抗攻击
-- 💼 **实习**：北方自动控制技术研究所（207所）— MARL 泛化框架研发
+- 💼 **实习经历**：拼多多（AI搜索评估框架研发）｜ 北方自动控制技术研究所（207所，MARL 泛化框架研发）
 - 🏆 **荣誉**：国家级奖项 6 项 / 省级 15 项 / 校级 30+ 项；国家励志奖学金、一等奖学金
 - 🌐 **语言**：英语 CET-6（流畅阅读英文文献） / 日语 N2
 
@@ -81,7 +81,62 @@
 
 ---
 
-## 💼 Internship — MARL 泛化框架（北方自动控制技术研究所 207所）
+## 💼 Internship
+
+### 🛒 拼多多 — OmniSrchX AI 搜索评估框架研发
+
+> 主导研发 **OmniSrchX 评估框架**——面向商品检索与推荐系统的配置驱动型自动化评估平台，支撑 AI搜 / 商详AI / AI卡 多场景的多维度量化评估与 GSB A/B 对比，服务线上策略迭代。
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white" />
+  <img src="https://img.shields.io/badge/SQLite-003B57?style=flat-square&logo=sqlite&logoColor=white" />
+  <img src="https://img.shields.io/badge/Vue.js-42B883?style=flat-square&logo=vuedotjs&logoColor=white" />
+  <img src="https://img.shields.io/badge/YAML-Config-blue?style=flat-square" />
+</p>
+
+<details open>
+<summary><b>评估维度与算法</b></summary>
+
+- 🆕 **幻觉评估（hallu_evaluation）**：设计商品提取 + knowledge_check prompt 拆分方案，新增只读评估模式
+- 🆕 **格式规则检查（format_rule_check）**：用正则规则检查后处理产物中的格式错误（未转换脚注、空/异常商卡引用等），无需 LLM 调用、结果确定、速度快
+- 🔧 **知识一致性**：新增锚点商品过滤指标；将陈述级过滤升级为段落级过滤，修复无标题文章的分隔线分段逻辑
+- 🔧 **平台负面表述检测**：增加质疑语境判定规则，修复多条漏检样本
+- 📊 **维度评估明细 Excel 导出**：实现评估明细一键导出能力，便于人评复核与结果交付
+
+</details>
+
+<details>
+<summary><b>性能优化与高并发治理</b></summary>
+
+- 🚀 **批量化进度写库**：原 runner 完成事件逐条同步写库，高并发下事件总线被 HTTP 往返阻塞 → 队列堆积反压 → 新 runner 入队延迟达 **10+ 分钟**。改为内存计数 + dirty 标记 + 后台定时批量 flush（同 job 多次更新合并为 1 次写库），将中间进度延迟收敛到 **2s**，终态仍即时写库
+- 🚀 **MySQL Proxy 三池架构**：隔离读写/批处理/查询池，优化 save_runner 写入路径，修复内存泄漏
+- 🚀 **binlog 压力治理**：save_runner 跳过未变化的 job_config 写入；进度 flush 按 per-job interval 过滤，items-mode 大行采用长间隔，显著降低大表 binlog 压力
+- 🚀 **并发与限流**：拆分对话拉拉取信号量 + 429 退避优化 + conversation_id 模式校验修正
+
+</details>
+
+<details>
+<summary><b>稳定性与可靠性</b></summary>
+
+- 🛡️ **熔断器 / 分阶段超时 / 幂等 upsert / 运行时动态配置**：构建面向长任务的容错与可恢复机制，支撑大规模批量评估稳定运行
+- 🛡️ **query-mysql-proxy skill 优化**：防 OOM / long-SQL，增加安全查询 helper
+- 🛡️ **商详AI场景加固**：ref_goods_infos 提升 + 商品字段归一化 + 后验矩阵更新
+
+</details>
+
+<details>
+<summary><b>数据与评测</b></summary>
+
+- 📦 新增 query 变体机评数据集（DeepSeek / GLM-NVFP4 × NA/PN），uid 按 record_id 从真实 uid 池单射采样
+- 📦 商详AI 有用性 / 负面表述评测数据集建设与迭代
+
+</details>
+
+---
+
+### 🎖 北方自动控制技术研究所（207所）— MARL 泛化框架研发
 
 > 面向智能体在未见场景下"脆弱专才"问题，构建<b>分层决策 + CTDE</b> 的可迁移协同策略学习框架，实验平台为 SMAC。
 
